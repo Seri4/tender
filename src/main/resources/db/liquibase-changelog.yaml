@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Sergei Glebov
+      changes:
+        - createTable:
+            tableName: document
+            columns:
+              - column: {name: id, type: bigint, autoIncrement: true, constraints: {primaryKey: true}}
+              - column: {name: extension, type: varchar}
+              - column: {name: date, type: date}
+              - column: {name: data, type: text}
+              - column: {name: error_count, type: int}
+
+  - changeSet:
+      id: 2
+      author: Sergei Glebov
+      changes:
+        - addColomn:
+            tableName: document
+            columns:
+              - column: {name: name, type: varchar}
+              - column: {name: size, type: varchar}
